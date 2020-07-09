@@ -9,6 +9,8 @@ const Cadastro = () => {
       email: "",
    });
 
+   const [usuarioCadastrado, setUsuarioCadastrado] = useState(false);
+
    function handleInputChange(event) {
       const { name, value } = event.target;
 
@@ -18,6 +20,7 @@ const Cadastro = () => {
    async function submitForm(event) {
       event.preventDefault();
       await api.post("users", formData);
+      setUsuarioCadastrado(true);
    }
 
    return (
@@ -41,6 +44,7 @@ const Cadastro = () => {
 
             <button type="submit">Cadastrar</button>
          </form>
+         {usuarioCadastrado && <h3>Usuário Cadastrado</h3>}
          <Link className="link" to="/">
             Voltar
          </Link>
