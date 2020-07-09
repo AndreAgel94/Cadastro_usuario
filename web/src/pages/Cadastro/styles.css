@@ -1,0 +1,38 @@
+.cadastro {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   align-content: center;
+}
+
+.link {
+   color: blue;
+   font-size: 20px;
+   padding-top: 25px;
+}
+
+h1 {
+   font-size: 60px;
+   padding: 30px;
+}
+
+button {
+   height: 50px;
+   border: 3px solid black;
+   font-size: large;
+   margin-left: 3px;
+}
+
+input {
+   height: 43px;
+   font-size: large;
+}
+
+.cadastro #name {
+   margin-left: 25px;
+}
+
+.cadastro #email {
+   margin-left: 3px;
+}
