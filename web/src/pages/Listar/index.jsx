@@ -8,10 +8,17 @@ import "./styles.css";
 const Listar = () => {
    const [users, setUsers] = useState([]);
    const [name, setName] = useState("");
+   const [userNotFound, setUserNotFound] = useState(false);
 
    async function fetchData() {
       const response = await api.get(`users/name/${name}`);
       console.log(response.data);
+      if (!response.data.length > 0) {
+         console.log("Igual a 0");
+         setUserNotFound(true);
+      } else {
+         setUserNotFound(false);
+      }
       setUsers(response.data);
    }
 
@@ -37,6 +44,7 @@ const Listar = () => {
             <Link className="toHome" to="/">
                Voltar
             </Link>
+            {userNotFound && <h3>Usuário não encontrado</h3>}
          </div>
 
          {users.map((user) => (
